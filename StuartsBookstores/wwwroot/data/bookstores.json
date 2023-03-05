@@ -1,0 +1,43 @@
+[
+  {
+    "id": 0,
+    "name": "Dawn Treader Books",
+    "address": "514 E Liberty St",
+    "city": "Ann Arbor",
+    "state": "Michigan",
+    "zip": 48104,
+    "country": "United States",
+    "latitude": 42.27928,
+    "longitude": -83.74251,
+    "website": "https://shop.dawntreaderbooks.com/",
+    "img": "DawnTreaderBooksAnnArbor.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Crescent City Books",
+    "address": "240 Chartres St",
+    "city": "New Orleans",
+    "state": "Louisiana",
+    "zip": 70130,
+    "country": "United States",
+    "latitude": 29.95416,
+    "longitude": -90.06663,
+    "date_visited": "02/28/2023",
+    "website": "http://www.crescentcitybooks.com/",
+    "img": "CrescentCityBooksNewOrleans.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Dauphine Street Books",
+    "address": "818 Chartres St",
+    "city": "New Orleans",
+    "state": "Louisiana",
+    "zip": 70116,
+    "country": "United States",
+    "latitude": 29.95853,
+    "longitude": -90.06269,
+    "date_visited": "02/28/2023",
+    "website": "https://www.facebook.com/DauphineStreetBooks/",
+    "img": "DawnTreaderBooksAnnArbor.jpg"
+  }
+]

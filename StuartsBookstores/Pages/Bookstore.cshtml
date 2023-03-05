@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model StuartsBookstores.Pages.BookstoreModel
+@{
+    ViewData["Title"] = Model.Bookstore.Name;
+}
+
+<div class="text-center">
+    <h1 class="display-4"><a href="@Model.Bookstore.Website">@Model.Bookstore.Name</a></h1>
+</div>
+
+<div class="bookstore-display">
+    <div class="bookstore-image">
+        <img src="@Url.Content("~/images/" + Model.Bookstore.Image)" />
+    </div>
+    <div class="bookstore-data">
+        <h4>@Model.Bookstore.City, @Model.Bookstore.State</h4>
+        <h5>@Model.Bookstore.Address</h5>
+    </div>
+</div>

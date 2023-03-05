@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Stuart's Bookstores</h1>
+</div>
+
+<div class="container py-5" id="bookstore-container">
+    <div class="row" data-masonry="{'percentPosition': true, 'columnWidth': 200}">
+        @foreach (var bookstore in Model.Bookstores)
+        {
+            <div class="col-sm-4 col-md-3 py-3">
+                <div class="card border-primary" id="bookstore-card">
+                    <div class="card-header">
+                        <h2 class="card-title">@bookstore.Name</h2>
+                    </div>
+                    <div class="card-body">
+                        <h5>@bookstore.City, @bookstore.State</h5>
+                        <h6>@bookstore.Address</h6>
+                        <a href="@Url.Content("~/bookstore/" + bookstore.Id)" class="stretched-link"></a>
+                    </div>
+                    <div class="card-img" style="background-image: url('@("images/" + bookstore.Image)');"></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
