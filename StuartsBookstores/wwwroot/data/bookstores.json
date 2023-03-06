@@ -1,43 +1,50 @@
-[
-  {
-    "id": 0,
-    "name": "Dawn Treader Books",
-    "address": "514 E Liberty St",
-    "city": "Ann Arbor",
-    "state": "Michigan",
-    "zip": 48104,
-    "country": "United States",
-    "latitude": 42.27928,
-    "longitude": -83.74251,
-    "website": "https://shop.dawntreaderbooks.com/",
-    "img": "DawnTreaderBooksAnnArbor.jpg"
+{
+  "Meta": {
+    "IDCounter": 3,
+    "BookstoreCount": 3
   },
-  {
-    "id": 1,
-    "name": "Crescent City Books",
-    "address": "240 Chartres St",
-    "city": "New Orleans",
-    "state": "Louisiana",
-    "zip": 70130,
-    "country": "United States",
-    "latitude": 29.95416,
-    "longitude": -90.06663,
-    "date_visited": "02/28/2023",
-    "website": "http://www.crescentcitybooks.com/",
-    "img": "CrescentCityBooksNewOrleans.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Dauphine Street Books",
-    "address": "818 Chartres St",
-    "city": "New Orleans",
-    "state": "Louisiana",
-    "zip": 70116,
-    "country": "United States",
-    "latitude": 29.95853,
-    "longitude": -90.06269,
-    "date_visited": "02/28/2023",
-    "website": "https://www.facebook.com/DauphineStreetBooks/",
-    "img": "DawnTreaderBooksAnnArbor.jpg"
-  }
-]
+  "Bookstores": [
+    {
+      "Id": 0,
+      "Name": "Dawn Treader Books",
+      "Address": "514 E Liberty St",
+      "City": "Ann Arbor",
+      "State": "Michigan",
+      "Zip": 48104,
+      "Country": "United States",
+      "Latitude": 42.27928,
+      "Longitude": -83.74251,
+      "Website": "https://shop.dawntreaderbooks.com/",
+      "img": "DawnTreaderBooksAnnArbor.jpg",
+      "date_visited": null
+    },
+    {
+      "Id": 1,
+      "Name": "Crescent City Books",
+      "Address": "240 Chartres St",
+      "City": "New Orleans",
+      "State": "Louisiana",
+      "Zip": 70130,
+      "Country": "United States",
+      "Latitude": 29.95416,
+      "Longitude": -90.06663,
+      "Website": "http://www.crescentcitybooks.com/",
+      "img": "CrescentCityBooksNewOrleans.jpg",
+      "date_visited": "02/28/2023"
+    },
+    {
+      "Id": 2,
+      "Name": "Dauphine Street Books",
+      "Address": "818 Chartres St",
+      "City": "New Orleans",
+      "State": "Louisiana",
+      "Zip": 70116,
+      "Country": "United States",
+      "Latitude": 29.95853,
+      "Longitude": -90.06269,
+      "Website": "https://www.facebook.com/DauphineStreetBooks/",
+      "img": "DawnTreaderBooksAnnArbor.jpg",
+      "date_visited": "02/28/2023"
+    }
+  ]
+}

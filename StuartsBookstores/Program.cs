@@ -11,6 +11,7 @@ namespace StuartsBookstores
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddTransient<JsonFileBookstoreService>();
+            builder.Services.AddTransient<FileService>();
             builder.Services.AddControllers();
 
             var app = builder.Build();
