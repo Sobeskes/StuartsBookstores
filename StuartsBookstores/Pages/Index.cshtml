@@ -8,9 +8,13 @@
     <div class="text-left" style="float:left;">
         <h6><a href="@Url.Content("~/map")">View Map</a></h6>
     </div>
-    <div class="text-right" style="float:right;">
-        <h6><a href="@Url.Content("~/addBookstore")">Add New Bookstore</a></h6>
-    </div>
+    @if (Model.LoggedUser == "stuart")
+    {
+        <div class="text-right" style="float:right;">
+            <h6><a href="@Url.Content("~/addBookstore")">Add New Bookstore</a></h6>
+        </div>
+    }
+
 </div>
 
 

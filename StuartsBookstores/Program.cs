@@ -10,9 +10,18 @@ namespace StuartsBookstores
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddTransient<JsonFileBookstoreService>();
             builder.Services.AddTransient<FileService>();
+            builder.Services.AddTransient<SQLService>();
+            builder.Services.AddTransient<CryptographyService>();
             builder.Services.AddControllers();
+
+            builder.Services.AddDistributedMemoryCache();
+
+            builder.Services.AddSession(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
             var app = builder.Build();
 
@@ -31,8 +40,16 @@ namespace StuartsBookstores
 
             app.UseAuthorization();
 
+            app.UseSession();
+
             app.MapRazorPages();
             app.MapControllers();
+
+            string workingDirectory = Environment.CurrentDirectory;
+            string path = Path.Combine(workingDirectory, "App_Data");
+
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+
 
             app.Run();
         }

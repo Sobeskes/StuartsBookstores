@@ -8,7 +8,7 @@ namespace StuartsBookstores.Controllers
     [ApiController]
     public class BookstoresController : Controller
     {
-        public BookstoresController(JsonFileBookstoreService bookstoreService)
+        public BookstoresController(SQLService bookstoreService)
         {
             this.BookstoreService = bookstoreService;
         }
@@ -19,7 +19,7 @@ namespace StuartsBookstores.Controllers
             return BookstoreService.GetBookstores();
         }
 
-        public JsonFileBookstoreService BookstoreService { get; }
+        public SQLService BookstoreService { get; }
 
         //public IActionResult Index()
         //{

@@ -1,0 +1,19 @@
+﻿@page
+@model StuartsBookstores.Pages.LoginModel
+@{
+}
+
+<form method="post" enctype="multipart/form-data" asp-page-handler="Login">
+    <div class="container">
+        <div class="row">
+            <div class="col-2"><b>Username</b>:</div>
+            <div class="col-2"><input type="text" name="username" required /></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><b>Password</b>:</div>
+            <div class="col-2"><input type="password" name="password" /></div>
+        </div>
+        <input type="submit" name="addNewBookstore" value="Login" />
+    </div>
+
+</form>

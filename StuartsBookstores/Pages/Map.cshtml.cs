@@ -8,12 +8,12 @@ namespace StuartsBookstores.Pages
     public class MapModel : PageModel
     {
 
-        public MapModel(JsonFileBookstoreService bookstoreService)
+        public MapModel(SQLService bookstoreService)
         {
             BookstoreService = bookstoreService;
         }
 
-        public JsonFileBookstoreService BookstoreService { get; private set; }
+        public SQLService BookstoreService { get; private set; }
         public IEnumerable<Bookstore> Bookstores { get; private set; }
 
         public void OnGet()

@@ -8,7 +8,7 @@ namespace StuartsBookstores.Pages
     public class BookstoreModel : PageModel
     {
         public BookstoreModel(ILogger<BookstoreModel> logger,
-            JsonFileBookstoreService bookstoreService)
+            SQLService bookstoreService)
         {
             _logger = logger;
             BookstoreService = bookstoreService;
@@ -21,7 +21,7 @@ namespace StuartsBookstores.Pages
 
         private readonly ILogger<BookstoreModel> _logger;
 
-        public JsonFileBookstoreService BookstoreService;
+        public SQLService BookstoreService;
         public Bookstore Bookstore { get; private set; }
     }
 }

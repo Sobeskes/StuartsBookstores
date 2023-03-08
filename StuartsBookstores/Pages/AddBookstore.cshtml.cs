@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StuartsBookstores.Services;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace StuartsBookstores.Pages
 {
@@ -8,37 +10,40 @@ namespace StuartsBookstores.Pages
     {
 
         public AddBookstoreModel(ILogger<IndexModel> logger,
-            JsonFileBookstoreService bookstoreService,
+            SQLService bookstoreService,
             FileService fileService)
         { 
             _logger = logger;
-            BookstoreService = bookstoreService;
+            DatabaseService = bookstoreService;
             FileUploadService = fileService;
         }
 
-        public async void OnPost()
+        public async Task<IActionResult> OnPost()
         {
-            string? GeneratedFileName = await FileUploadService.UploadFile(File, "images");
-            
-            BookstoreService.AddBookstore(Name, City, State, Country, GeneratedFileName, Address, Zip, Latitude, Longitude, Website, DateVisited);
-        }
-
-        public void OnGet()
-        {
-
-        }
-
-        private bool ValidInput()
-        {
-            if (Name == null || City == null || State == null || Country == null)
+            if (HttpContext.Session.GetString("LoggedInUser") != "stuart")
             {
-                return false;
+                return RedirectToPage("Index");
             }
-            return true;
+            string? GeneratedFileName = await FileUploadService.UploadFile(File, "images");
+
+            DatabaseService.AddBookstore(Name, City, State, Country, GeneratedFileName, Address,
+                Zip, Latitude, Longitude, Website, DateVisited);
+
+            return new EmptyResult();
+        }
+
+        public IActionResult OnGet()
+        {
+            if(HttpContext.Session.GetString("LoggedInUser") != "stuart")
+            {
+                return RedirectToPage("Index");
+            }
+            return new EmptyResult();
+
         }
 
         private readonly ILogger<IndexModel> _logger;
-        public JsonFileBookstoreService BookstoreService;
+        public SQLService DatabaseService;
         public FileService FileUploadService;
 
         [BindProperty]

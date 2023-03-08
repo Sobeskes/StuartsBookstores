@@ -27,6 +27,22 @@
                         </li>
                     </ul>
                 </div>
+                @{string loggedUser = Context.Session.GetString("LoggedInUser");}
+                @if(loggedUser == "")
+                {
+                    <div float="right">
+                        <a class="nav-link text-dark" asp-page="/login">Login</a>
+                    </div>
+                }
+                else
+                {
+                    <form method="post" asp-page="/Login" asp-page-handler="Logout">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" style="background:none;border:none;">Logout</button>
+                    </form>
+                    <div>     </div>
+                    <div>@loggedUser</div>
+                }
             </div>
         </nav>
     </header>
